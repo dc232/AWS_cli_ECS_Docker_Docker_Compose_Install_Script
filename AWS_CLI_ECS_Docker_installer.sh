@@ -285,10 +285,9 @@ docker version
 
 
 check_if_docker_compose_is_installed () {
-if [ ! -f /opt/bin/docker-compose ]; then
-	sudo mkdir -p /opt/bin
-    curl -L https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-`uname -s`-`uname -m` > /opt/bin/docker-compose
-	sudo chmod +x /opt/bin/docker-compose
+if [ ! -f /usr/local/bin/docker-compose ]; then
+    sudo curl -L https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+	sudo chmod +x /usr/local/bin/docker-compose
 else
   cat << EOF 
 ##########################################################
