@@ -237,7 +237,7 @@ echo "unistalling any old version of docker engine that may have been on the sys
 sleep 2
 sudo apt-get remove docker docker-engine docker.io
 echo "installing docker CE via the repository"
-sudo apt-get update && apt-get upgrade -y
+sudo apt update && sudo apt upgrade -y
 echo "allowing apt to use a repository over HTTPS"
 sleep 2
 sudo apt-get install \
